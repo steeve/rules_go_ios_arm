@@ -1,0 +1,16 @@
+build                   --verbose_failures
+build                   --ios_minimum_os=9.0
+build                   --experimental_objc_enable_module_maps
+build                   --strip=never
+
+build:ios_arm           --platforms=@io_bazel_rules_go//go/toolchain:darwin_arm
+build:ios_arm           --cpu=ios_armv7
+
+build:ios_arm64         --platforms=@io_bazel_rules_go//go/toolchain:darwin_arm64
+build:ios_arm64         --cpu=ios_arm64
+
+build:ios_386           --platforms=@io_bazel_rules_go//go/toolchain:darwin_386
+build:ios_386           --cpu=ios_i386
+
+build:ios_amd64         --platforms=@io_bazel_rules_go//go/toolchain:darwin_amd64
+build:ios_amd64         --cpu=ios_x86_64
